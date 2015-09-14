@@ -1,0 +1,238 @@
+# coding: utf-8
+pylab
+a = 10
+a
+%run -i my_first.py
+%run my_first.py
+def test():
+        print("This is %d a test" % 100)
+    
+def paste_test():
+        if True:
+                print(2)
+                
+        print(2)
+%paste
+%cpaste
+paste_test()
+%run ch03/ipython_bug.py 
+np
+np.random.randn?
+num = np.random.randn(10, 10)
+num
+%timeit np.dot(a, a)
+np.dot?
+%save?
+%save -r ch02 1-19
+ls
+%quickref
+%magic
+img = plt.imread('ch03/stinkbug.png')
+imshow(img)
+plot(randn(1000).cumsum()) // line 46
+%save -a -r ch03 20-46
+%save -a -r my_ch03 20-46
+%gui?
+%gui qt5
+%gui qt4|qt
+%gui qt
+%gui?
+from pandas.io.data import get_data_yahoo
+spy_close = get_data_yahoo('SPY')
+close = spy_close['Adj Close']
+plot(close)
+plot(close)
+close.plot()
+close.plot(rot=0)
+close[:10]
+spy_close
+spy_close[:10]
+type(spy_close)
+spy_close[:10]  // 70
+2 ** 20
+foo = _
+foo
+_73
+_i73
+%save -a -r my_ch03 71-75
+exec _i73
+exec _i72
+exec _73
+exec _i73
+exec?
+exec foo
+exec(_i73)
+exec(_i71)
+_i71
+_i83
+print('hahaha')
+exec(_i87)
+%hist
+%hist 1-10
+%hist 20-40
+%logstart
+%logstart?
+%logoff
+%pwd
+!cmd
+%env
+%bookmark
+%pwd
+%dhist
+%cd ch02
+%cd?
+%cd?
+%cd?
+cd -
+ls
+cd \
+ls
+cd -
+cd .\
+ls
+cd ..
+cd..
+cd -
+ls
+ls *.py
+ls *.ipy
+rm ch03.ipy
+ls
+ls *.i*
+ls *.ipy
+!python
+!pylab
+!ipython
+%dhist
+%cd ch02
+%cd?
+%cd?
+%cd?
+cd -
+ls
+cd \
+ls
+cd -
+cd .\
+ls
+cd ..
+cd..
+cd -
+ls
+ls *.py
+ls *.ipy
+rm ch03.ipy
+ls
+ls *.i*
+ls *.ipy
+!python
+!pylab
+!ipython
+%save -a -r my_cb03 76-124
+%save -a -r my_ch03 76-124
+rm my_cb03.*
+ls my*.*
+ip_info = !ifconfig eth0 |grep "inet "
+ip_info[0]
+ip_info[0].strip()
+foo = '*.i*'
+ls $foo
+%ls -l?
+%ls?
+ls?
+dir?
+dir
+%pwd?
+%ls?
+ls -F -G?
+ls -F?
+ls?
+ls??
+%env?
+%env??
+%env
+%alias test_alias (cd ch02; ls; cd ..)
+test_alias
+ls
+run ch03/ipython_bug.py
+%debug
+run -d ch03/ipython_bug.py
+debug
+%debug
+%debug
+%run ch02/test.py
+debug
+debug
+debug
+s
+debug
+debug
+run ch03/ipython_bug.py
+debug
+debug
+%run -d ch03/ipython_bug.py
+%hist
+test_string = ['foo', 'foobar', 'baz', 'qux', 'python', 'Guido Van Rossum'] * 10000
+m1  = [st for st in test_string if st.startswith('foo')]
+%time m1  = [st for st in test_string if st.startswith('foo')]
+
+
+import numpy as np
+from numpy.linalg import eigvals
+
+def run_experiment(niter=100):
+    K = 100
+    results = []
+    for _ in range(niter):
+        mat = np.random.randn(K, K)
+        max_eigenvalue = np.abs(eigvals(mat)).max()
+        results.append(max_eigenvalue)
+    return results
+
+some_results = run_experiment()
+print('Largest one %s' % np.max(some_results))
+
+%save -a -r my_ch03
+%save -a -r my_ch03 100-171
+%time m1  = [st for st in test_string if st.startswith('foo')]
+%time m1  = [st for st in test_string if st.startswith('foo')]
+%time m1  = [st for st in test_string if st.startswith('foo')]
+%time m1  = [st for st in test_string if st.startswith('foo')]
+%time m1  = [st for st in test_string if st.startswith('foo')]
+%time m1  = [st for st in test_string if st.startswith('foo')]
+%timeit m1  = [st for st in test_string if st.startswith('foo')]
+%timeit m1  = [st for st in test_string if st.startswith('foo')]
+%paste
+%paste
+%prun -l 7 -s cumulative run_experiment()
+%prun -l -s cumulative run_experiment()
+%prun -l 10 -s cumulative run_experiment()
+%prun?
+%prun cumulative run_experiment()
+%prun 7 cumulative run_experiment()
+%prun?
+%prun -s cumulative run_experiment()
+class Msg(object):
+    def __init__(self, msg):
+        self.msg = msg
+    def __repr__(self):
+        print('Message: %s' % msg)
+        print('Message: %s' % msg)
+        
+%paste
+class Msg(object):
+    def __init__(self, msg):
+        self.msg = msg
+    def __repr__(self):
+        print('Message: %s' % self.msg)
+        
+x = Msg('cool')
+x
+class Msg(object):
+    def __init__(self, msg):
+        self.msg = msg
+    def __repr__(self):
+        return 'Message: %s' % self.msg
+    
+my_msg = Msg('cool')
+my_msg
